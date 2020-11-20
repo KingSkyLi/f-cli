@@ -2,17 +2,22 @@
   "name": "fv-cli",
   "version": "1.0.2",
   "description": "this is vue cli ",
-  "main": "index.js",
+  "main": "bin/fv.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "fv-cli": "./index.js"
+    "fv": "./bin/fv.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vue/cli-shared-utils": "^4.5.9",
     "commander": "^6.2.0",
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.5",
+    "slash": "^3.0.0"
+  },
+  "engines": {
+    "node": "^10.12.0 || ^12.0.0 || >= 14.0.0"
   }
 }
