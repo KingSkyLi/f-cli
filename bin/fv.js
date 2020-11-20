@@ -29,13 +29,22 @@ checkNodeVersion(wantedNodeVersion, 'fv-cli')
 
 // 定义版本号
 program
-    .version(`${chalk.green(`fv-cli ${require('../package').version}`)}`)
+    .version(`${chalk.green(`fv-cli ${require('../package').version}`)}`, '-v --version', '当前版本号')
     .usage('<command> [options]')
+
+program
+    .option('-h --help', '查看帮组文档')
 
 // 定义create指令
 program
     .command('create <app-name>')
     .description('使用fv-cli创建一个新的项目')
+    .action((name, cmd) => {
+        // console.log(name)
+    })
+program
+    .command('help')
+    .description('查看帮组手册')
     .action((name, cmd) => {
         // console.log(name)
     })
@@ -49,7 +58,7 @@ programErrorMessages('missingArgument', argName => {
 })
 
 programErrorMessages('unknownCommand', () => {
-    
+
 })
 
 
