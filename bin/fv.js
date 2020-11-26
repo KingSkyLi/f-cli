@@ -15,6 +15,9 @@ const wantedNodeVersion = require('../package.json').engines.node
 // 指令错误信息
 const programErrorMessages = require('../lib/util/programErrorMessages')
 
+const create = require('../lib/create.js')
+
+
 // 定义版本校验函数
 function checkNodeVersion(wanted, name) {
     if (!semver.satisfies(process.version, wanted, { includePrerelease: true })) {
@@ -40,7 +43,7 @@ program
     .command('create <app-name>')
     .description('使用fv-cli创建一个新的项目')
     .action((name, cmd) => {
-        // console.log(name)
+        create(name,{})
     })
 program
     .command('help')
